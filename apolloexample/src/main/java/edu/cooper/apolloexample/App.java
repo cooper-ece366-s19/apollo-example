@@ -14,7 +14,14 @@ public final class App {
   }
 
   private static void init(final Environment environment) {
-    SyncHandler<String> pingHandler = requestContext -> "pong";
+    SyncHandler<String> pingHandler = requestContext -> {
+      int x = 5;
+      Integer a = null;
+      System.out.println(x);
+      Integer y = 5;
+      Integer z;
+      return "pong";
+    };
     final SyncHandler<String> handler = (RequestContext requestContext) ->
         requestContext.pathArgs().get("name");
     environment
